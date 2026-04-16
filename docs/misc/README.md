@@ -261,7 +261,7 @@ Start with: **[error_handler.func/](./error_handler.func/)** → **[api.func/](.
 
 ## 📚 **Related Top-Level Documentation**
 
-- **[CONTRIBUTION_GUIDE.md](../CONTRIBUTION_GUIDE.md)** - How to contribute to ProxmoxVED
+- **[contribution/README.md](../contribution/README.md)** - How to contribute to ProxmoxVED
 - **[UPDATED_APP-ct.md](../UPDATED_APP-ct.md)** - Container script guide
 - **[UPDATED_APP-install.md](../UPDATED_APP-install.md)** - Installation script guide
 - **[DEFAULTS_SYSTEM_GUIDE.md](../DEFAULTS_SYSTEM_GUIDE.md)** - Configuration system

@@ -13,7 +13,7 @@ VM documentation parallels container documentation but focuses on VM-specific fe
 ## Key Resources
 
 - **[misc/cloud-init.func/](../misc/cloud-init.func/)** - Cloud-init provisioning documentation
-- **[CONTRIBUTION_GUIDE.md](../CONTRIBUTION_GUIDE.md)** - Contribution workflow
+- **[contribution/README.md](../contribution/README.md)** - Contribution workflow
 - **[EXIT_CODES.md](../EXIT_CODES.md)** - Exit code reference
 
 ## VM Creation Flow

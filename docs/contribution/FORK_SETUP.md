@@ -10,7 +10,7 @@ git clone https://github.com/YOUR_USERNAME/ProxmoxVED.git
 cd ProxmoxVED
 
 # Run setup script (auto-detects your username from git)
-bash setup-fork.sh
+bash docs/contribution/setup-fork.sh
 ```
 
 That's it! ✅
@@ -22,9 +22,8 @@ That's it! ✅
 The `setup-fork.sh` script automatically:
 
 1. **Detects** your GitHub username from git config
-2. **Updates** 22 hardcoded links in documentation to point to your fork
+2. **Rewrites** fork-specific GitHub raw/blob links in scripts and docs to point to your fork
 3. **Creates** `.git-setup-info` with recommended git workflows
-4. **Backs up** all modified files (*.backup)
 
 ---
 
@@ -32,38 +31,42 @@ The `setup-fork.sh` script automatically:
 
 ### Auto-Detect (Recommended)
 ```bash
-bash setup-fork.sh
+bash docs/contribution/setup-fork.sh
 ```
 Automatically reads your GitHub username from `git remote origin url`
 
 ### Specify Username
 ```bash
-bash setup-fork.sh john
+bash docs/contribution/setup-fork.sh john
 ```
 Updates links to `github.com/john/ProxmoxVED`
 
 ### Custom Repository Name
 ```bash
-bash setup-fork.sh john my-fork
+bash docs/contribution/setup-fork.sh john my-fork
 ```
 Updates links to `github.com/john/my-fork`
+
+### Full Fork URL or `owner/repo`
+```bash
+bash docs/contribution/setup-fork.sh john/my-fork
+bash docs/contribution/setup-fork.sh https://github.com/john/my-fork
+```
+Useful when you want to paste the fork directly instead of passing separate arguments.
 
 ---
 
 ## What Gets Updated?
 
-The script updates these documentation files:
-- `docs/CONTRIBUTION_GUIDE.md` (4 links)
-- `docs/README.md` (1 link)
-- `docs/INDEX.md` (3 links)
-- `docs/EXIT_CODES.md` (2 links)
-- `docs/DEFAULTS_SYSTEM_GUIDE.md` (2 links)
-- `docs/api/README.md` (1 link)
-- `docs/APP-ct.md` (1 link)
-- `docs/APP-install.md` (1 link)
-- `docs/alpine-install.func.md` (2 links)
-- `docs/install.func.md` (1 link)
-- And code examples in documentation
+The script scans these areas and rewrites copy/paste GitHub URLs that should point to your fork:
+- `ct/`
+- `install/`
+- `misc/`
+- `vm/`
+- `tools/`
+- `docs/`
+
+It also creates `.git-setup-info` in the repository root.
 
 ---
 
@@ -88,7 +91,7 @@ The script updates these documentation files:
 
 4. **Follow the guide**
    ```bash
-   cat docs/CONTRIBUTION_GUIDE.md
+   cat docs/contribution/README.md
    ```
 
 ---
@@ -131,7 +134,7 @@ git checkout -b feature/my-feature
 # Make sure you cloned the repo first
 git clone https://github.com/YOUR_USERNAME/ProxmoxVED.git
 cd ProxmoxVED
-bash setup-fork.sh
+bash docs/contribution/setup-fork.sh
 ```
 
 ### "Could not auto-detect GitHub username"
@@ -142,29 +145,30 @@ git remote -v
 
 # Fix it:
 git remote set-url origin https://github.com/YOUR_USERNAME/ProxmoxVED.git
-bash setup-fork.sh
+bash docs/contribution/setup-fork.sh
 ```
 
 ### "Permission denied"
 ```bash
 # Make script executable
-chmod +x setup-fork.sh
-bash setup-fork.sh
+chmod +x docs/contribution/setup-fork.sh
+bash docs/contribution/setup-fork.sh
 ```
 
-### Reverted Changes by Accident?
+### Need to Change the Target Fork?
 ```bash
-# Backups are created automatically
-git checkout docs/*.backup
-# Or just re-run setup-fork.sh
+# Re-run the script with the correct values
+bash docs/contribution/setup-fork.sh YOUR_USERNAME
+# Or pass the full fork URL
+bash docs/contribution/setup-fork.sh https://github.com/YOUR_USERNAME/ProxmoxVED
 ```
 
 ---
 
 ## Next Steps
 
-1. ✅ Run `bash setup-fork.sh`
-2. 📖 Read [docs/CONTRIBUTION_GUIDE.md](docs/CONTRIBUTION_GUIDE.md)
+1. ✅ Run `bash docs/contribution/setup-fork.sh`
+2. 📖 Read [docs/contribution/README.md](README.md)
 3. 🍴 Choose your contribution path:
    - **Containers** → [docs/ct/README.md](docs/ct/README.md)
    - **Installation** → [docs/install/README.md](docs/install/README.md)
@@ -177,7 +181,7 @@ git checkout docs/*.backup
 ## Questions?
 
 - **Fork Setup Issues?** → See [Troubleshooting](#troubleshooting) above
-- **How to Contribute?** → [docs/CONTRIBUTION_GUIDE.md](docs/CONTRIBUTION_GUIDE.md)
+- **How to Contribute?** → [docs/contribution/README.md](README.md)
 - **Git Workflows?** → `cat .git-setup-info`
 - **Project Structure?** → [docs/README.md](docs/README.md)
 

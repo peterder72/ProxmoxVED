@@ -287,4 +287,4 @@ Found an error? Want to improve docs?
 
 ---
 
-**Welcome to ProxmoxVED! Start with [CONTRIBUTION_GUIDE.md](CONTRIBUTION_GUIDE.md) or choose your role above.** 🚀
+**Welcome to ProxmoxVED! Start with [contribution/README.md](contribution/README.md) or choose your role above.** 🚀

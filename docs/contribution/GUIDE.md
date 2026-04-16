@@ -38,7 +38,7 @@ git clone https://github.com/YOUR_USERNAME/ProxmoxVED.git
 cd ProxmoxVED
 
 # 3. Run fork setup script (automatically configures everything)
-bash setup-fork.sh
+bash docs/contribution/setup-fork.sh
 # This auto-detects your username and updates all documentation links
 
 # 4. Read the git workflow tips
@@ -75,7 +75,7 @@ git fetch upstream
 git rebase upstream/main
 ```
 
-**💡 Tip**: See `../FORK_SETUP.md` for detailed fork setup and troubleshooting
+**💡 Tip**: See `./FORK_SETUP.md` for detailed fork setup and troubleshooting
 
 ---
 
@@ -561,7 +561,7 @@ fi
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: YourUsername
 # Co-Author: AnotherAuthor (for collaborative work)
-# License: MIT | https://github.com/community-scripts/ProxmoxVED/raw/main/LICENSE
+# License: MIT | https://github.com/peterder72/ProxmoxVED/raw/main/LICENSE
 # Source: https://github.com/app/repo
 # Description: Brief description of what this script does
 ```
